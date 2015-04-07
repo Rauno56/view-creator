@@ -1,0 +1,12 @@
+{
+	"preset": "yandex",
+	"excludeFiles": ["node_modules/**"],
+	"disallowImplicitTypeConversion": null,
+	"disallowNewlineBeforeBlockStatements": true,
+	"disallowSpacesInsideObjectBrackets": null,
+	"disallowYodaConditions": null,
+	"maximumLineLength": null,
+	"requireCurlyBraces": null,
+	"requireSpaceBeforeBlockStatements": true,
+  "disallowMultipleLineBreaks": null
+}
