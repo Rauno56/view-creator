@@ -8,5 +8,6 @@
 	"maximumLineLength": null,
 	"requireCurlyBraces": null,
 	"requireSpaceBeforeBlockStatements": true,
+	"validateIndetation": "\t";
   "disallowMultipleLineBreaks": null
 }

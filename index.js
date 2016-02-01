@@ -19,7 +19,7 @@ Creator.prototype = {
 		return this.definitions[name];
 	},
 	setDefinition: function (name, definition) {
-		return this.definitions[name] = definition.trim().replace(semiColonEndingRegExp, '');
+		return (this.definitions[name] = definition.trim().replace(semiColonEndingRegExp, ''));
 	},
 	unregister: function (name) {
 		this.definitions[name] = null;
