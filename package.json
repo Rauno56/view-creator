@@ -4,6 +4,7 @@
   "description": "Create and drop PostgreSQL DB views.",
   "main": "index.js",
   "scripts": {
+    "preversion": "npm test",
     "test": "mocha"
   },
   "repository": {
