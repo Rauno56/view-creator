@@ -37,9 +37,11 @@ Creator.prototype = {
 		return this.clean().then(this.setup.bind(this));
 	},
 	setup: function () {
-		return Promise.all(Object.keys(this.definitions).map(function (key) {
-			return this.setupOne(key, this.definitions[key]);
-		}.bind(this)));
+		return Promise.all(Object.keys(this.definitions))
+			.bind(this)
+			.map(function (key) {
+				return this.setupOne(key, this.definitions[key]);
+			});
 	},
 	setupOne: function (name, definition) {
 		return query('CREATE VIEW ' + name + ' AS (' + definition + ');')
