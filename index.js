@@ -44,12 +44,17 @@ Creator.prototype = {
 			});
 	},
 	setupOne: function (name, definition) {
-		return query('CREATE VIEW ' + name + ' AS (' + definition + ');')
+		return query('CREATE OR REPLACE VIEW ' + name + ' AS (' + definition + ');')
 			.catch(function (error) {
 				error.message = 'Error setting up \'' + name + '\': ' + error.message;
 				throw error;
 			})
 			.then(function (rows) { return name; });
+	},
+	clean: function () {
+		return Promise.all(Object.keys(this.definitions).map(function (key) {
+			return this.cleanOne(key);
+		}.bind(this)));
 	},
 	cleanOne: function (name, sql) {
 		return query(sql || ('DROP VIEW IF EXISTS ' + name + ';'))
@@ -59,9 +64,4 @@ Creator.prototype = {
 			})
 			.then(function (rows) { return name; });
 	},
-	clean: function () {
-		return Promise.all(Object.keys(this.definitions).map(function (key) {
-			return this.cleanOne(key);
-		}.bind(this)));
-	}
 };
