@@ -49,7 +49,7 @@ Creator.prototype = {
 				error.message = 'Error setting up \'' + name + '\': ' + error.message;
 				throw error;
 			})
-			.then(function (rows) { return name; });
+			.return(name);
 	},
 	clean: function () {
 		return Promise.all(Object.keys(this.definitions).map(function (key) {
@@ -62,6 +62,6 @@ Creator.prototype = {
 				error.message = 'Error cleaning up \'' + name + '\': ' + error.message;
 				throw error;
 			})
-			.then(function (rows) { return name; });
+			.return(name);
 	},
 };
