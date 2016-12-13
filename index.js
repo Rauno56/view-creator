@@ -29,7 +29,7 @@ Creator.prototype = {
 			throw new Error('Duplicate registration of view ' + name + '.');
 		}
 		if ('string' !== typeof definition) {
-			throw new Error('Invalid definition for view ' + name + '.');
+			throw new Error('Invalid type of definition for view ' + name + ': ' + JSON.stringify(definition) + '.');
 		}
 		return this.setDefinition(name, definition);
 	},

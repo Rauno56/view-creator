@@ -41,7 +41,7 @@ describe('Creator', function () {
 		});
 
 		it('should error if definition not a string', function () {
-			expect(c.register.bind(c)).withArgs(NAME, NOTASTRING).to.throwError(/invalid definition/i);
+			expect(c.register.bind(c)).withArgs(NAME, NOTASTRING).to.throwError(/invalid type of definition/i);
 		});
 	});
 
