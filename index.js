@@ -1,6 +1,6 @@
 var query = require('pg-query');
 var Promise = require('bluebird');
-var semiColonEndingRegExp = /;$/;
+var semiColonEndingRegExp = /\s*;\s*$/;
 
 module.exports = Creator;
 
